@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Electric Cooperative Trail</title><meta name="theme-color" content="#010602"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="The Electric Cooperative Trail"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><style>
+*{box-sizing:border-box}body{margin:0;background:#262522;color:#222;font-family:Arial,sans-serif;padding:18px}.computer{max-width:1100px;margin:auto;background:linear-gradient(110deg,#c6bba1,#eee3c8 38%,#b9ad93);border:5px solid #a3987e;border-radius:28px 28px 16px 16px;padding:24px 30px 15px;box-shadow:0 20px 0 #8d8169,0 28px 40px #111}.brand{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;color:#5e584c;font-weight:700;letter-spacing:2px}.brand span:last-child{font-size:13px}.bezel{background:linear-gradient(130deg,#847d6c,#aaa18d);border:12px solid #a89e88;border-radius:23px;padding:15px;box-shadow:inset 0 0 18px #4c463b}.crt{background:#010602;color:#4cff81;border:5px solid #343c31;border-radius:32px/25px;padding:22px;box-shadow:inset 0 0 38px #06260e,0 0 5px #1e261e;position:relative;overflow:hidden;font-family:'Courier New',monospace}.crt:after{content:'';pointer-events:none;position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,#0004 4px);opacity:.28;border-radius:inherit}.title{text-align:center;font-size:clamp(20px,3.9vw,42px);font-weight:900;letter-spacing:1px;line-height:1.08;border-top:3px solid #4cff81;border-bottom:3px solid #4cff81;padding:9px 0;text-shadow:0 0 9px #23863f}.scene{width:100%;aspect-ratio:3.3;display:block;image-rendering:pixelated;margin:12px 0}.story{border:3px solid #4cff81;padding:14px;white-space:pre-wrap;min-height:120px;line-height:1.5;font-size:clamp(12px,1.65vw,17px)}.bottom{display:grid;grid-template-columns:1fr minmax(180px,34%);gap:18px;margin-top:15px}.question{font-weight:bold;font-size:17px;margin-bottom:8px}.actions button{display:block;background:transparent;border:1px solid transparent;color:#4cff81;text-align:left;width:100%;padding:7px;font:inherit;font-size:clamp(12px,1.4vw,16px);cursor:pointer}.actions button:hover,.actions button:focus{background:#164524;border-color:#4cff81;outline:none}.actions button:disabled{opacity:.32;cursor:not-allowed}.stats{border:3px solid #4cff81;padding:11px;align-self:start;font-size:clamp(11px,1.3vw,15px);line-height:1.65}.stats div{display:flex;justify-content:space-between;gap:8px}.stats strong{font-weight:normal;color:#adffc2}.stats hr{border:0;border-top:1px dashed #4cff81}.deadline{margin-top:8px;color:#b9ffca;font-weight:bold}.cursor{display:inline-block;width:11px;height:17px;background:#4cff81;animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}.chin{display:flex;justify-content:space-between;align-items:center;margin:18px 5px 0}.drive{border:3px solid #827765;background:#c8bba1;border-radius:5px;width:190px;padding:9px}.slot{background:#37332d;height:8px;border-radius:3px}.light{background:#53833d;width:10px;height:10px;border-radius:50%;box-shadow:0 0 5px #53833d}.instructions{text-align:center;color:#e0d6c4;font-size:13px;margin:32px auto 0}.instructions button{background:#e5d7b9;border:0;border-radius:5px;padding:8px 12px;cursor:pointer;margin-left:10px}@media(max-width:650px){body{padding:5px}.computer{padding:12px 8px}.bezel{padding:5px;border-width:6px}.crt{padding:11px;border-radius:17px}.bottom{grid-template-columns:1fr}.stats{grid-row:1;display:grid;grid-template-columns:repeat(2,1fr);gap:0 8px}.stats hr{display:none}.scene{aspect-ratio:2.5}.drive{width:100px}.brand{font-size:12px}}
+
+/* Fixed generous screen size, with no internal scrollbars. */
+.computer,.bezel,.crt{width:100%;min-width:0}
+.bottom{grid-template-columns:minmax(0,1fr) minmax(180px,34%)}
+.bottom>div{min-width:0}
+.crt{height:930px;min-height:930px;overflow:visible}
+.scene{height:auto;aspect-ratio:3.3;object-fit:fill}
+.story{min-height:190px;height:auto;overflow:visible;overflow-wrap:anywhere}
+.bottom{min-height:340px;overflow:visible}
+.actions{overflow:visible;min-height:0}
+.actions button{overflow-wrap:anywhere}
+.stats{min-width:0}
+@media(max-width:650px){
+ .crt{height:1320px;min-height:1320px}
+ .scene{height:auto;aspect-ratio:2.5}
+ .story{min-height:210px;height:auto}
+ .bottom{grid-template-columns:minmax(0,1fr);min-height:560px;overflow:visible}
+ .stats{grid-row:1}
+}
+/* Phone and small tablet: preserve the game, make the computer fit the viewport. */
+@media (max-width: 760px) {
+ html,body {width:100%;max-width:100%;overflow-x:hidden}
+ body {padding:10px 7px 24px; -webkit-text-size-adjust:100%}
+ .computer {width:100%;max-width:100%;padding:12px 9px 13px;border-width:3px;border-radius:18px;box-shadow:0 9px 0 #8d8169,0 16px 20px #111}
+ .brand {font-size:10px;letter-spacing:.6px;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+ .brand span:last-child {font-size:9px;letter-spacing:.4px}
+ .bezel {border-width:6px;border-radius:15px;padding:5px}
+ .crt {height:auto;min-height:0;padding:12px 9px 20px;border-width:3px;border-radius:15px;overflow:hidden}
+ .title {font-size:clamp(19px,6vw,30px);padding:7px 0;letter-spacing:0}
+ .scene {width:100%;height:auto;aspect-ratio:3.2;margin:10px 0 12px}
+ .story {height:auto;min-height:0;padding:12px 10px;font-size:clamp(13px,3.7vw,16px);line-height:1.48;overflow-wrap:break-word}
+ .bottom {display:flex;flex-direction:column;gap:14px;margin-top:14px;min-height:0}
+ .bottom>div {width:100%}
+ .bottom>div:first-child {order:1}
+ .stats {order:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 12px;padding:10px;font-size:clamp(11px,3.3vw,14px);line-height:1.6}
+ .stats div {min-width:0;gap:3px}
+ .stats hr {display:none}
+ .stats .deadline {grid-column:1/-1;margin-top:5px}
+ .question {font-size:15px;margin-bottom:8px}
+ .actions button {font-size:clamp(13px,3.7vw,16px);line-height:1.4;padding:12px 10px;min-height:46px;border:1px solid #256d3b;border-radius:4px;margin-bottom:7px;touch-action:manipulation}
+ .actions button:active {background:#164524;border-color:#4cff81}
+ .chin {margin:12px 3px 0;gap:8px}
+ .drive {width:90px;padding:6px}
+ .chin span[style] {font-size:8px!important;letter-spacing:.4px!important}
+ 
+ 
+ .instructions {margin:24px auto 0;padding:0 7px;line-height:1.6;font-size:12px}
+ .instructions button {margin:10px 0 0;min-height:44px;padding:10px 18px}
+}
+@media (max-width: 380px) {
+ body {padding:5px 3px 20px}
+ .computer {padding:9px 5px}
+ .bezel {padding:3px;border-width:4px}
+ .crt {padding:9px 7px 16px}
+ .brand span:last-child {font-size:8px}
+ .stats {gap:3px 6px}
+ 
+}
+
+/* Desktop screen stays the same compact height on every game screen. */
+@media (min-width: 761px) {
+  .computer { min-height:0; }
+  .crt { height:1000px; min-height:1000px; }
+}
+@media (min-width:761px) and (max-width:920px) { .crt { height:1080px; min-height:1080px; } }
+/* Wix mobile embed: optimize based on actual embed width, not just device viewport. */
+html { min-width:0; }
+body { min-width:0; }
+.computer { min-width:0; }
+@media (max-width: 760px) {
+  .crt { height:auto !important; min-height:0 !important; }
+  body { padding: 0 0 18px !important; background:#262522; }
+  .computer { width:100% !important; max-width:none !important; margin:0 !important; padding:9px 5px 10px !important; border:2px solid #a3987e !important; border-radius:11px !important; box-shadow:none !important; }
+  .brand { padding:0 5px; margin:0 0 7px !important; display:block !important; text-align:center; font-size:10px !important; line-height:1.4; }
+  .brand span { display:block; }
+  .brand span:last-child { display:none; }
+  .bezel { padding:3px !important; border:3px solid #a89e88 !important; border-radius:10px !important; }
+  .crt { padding:10px 8px 15px !important; border:2px solid #343c31 !important; border-radius:9px !important; }
+  .title { font-size:clamp(17px,5vw,27px) !important; }
+  .story { padding:12px 10px !important; font-size:15px !important; line-height:1.52 !important; }
+  .bottom { display:flex !important; flex-direction:column !important; gap:12px !important; }
+  .bottom > div:first-child { order:1 !important; }
+  .stats { order:2 !important; display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:4px 10px !important; padding:9px !important; font-size:12px !important; }
+  .stats div { min-width:0 !important; flex-wrap:wrap; }
+  .stats strong { overflow-wrap:anywhere; }
+  .actions button { font-size:15px !important; min-height:48px !important; padding:11px 8px !important; }
+  .scene { aspect-ratio:3.1 !important; }
+  .chin { margin-top:9px !important; }
+  
+  .instructions { margin-top:17px !important; }
+}
+@media (max-width: 390px) {
+  .crt { padding:8px 6px 12px !important; }
+  .story { padding:10px 8px !important; font-size:14px !important; }
+  .stats { grid-template-columns:minmax(0,1fr) !important; font-size:13px !important; }
+  .stats div { flex-wrap:nowrap; }
+}
+
+/* Click-to-connect line construction mini-game */
+.line-map{position:relative;width:100%;height:245px;margin:12px 0;border:2px solid #4cff81;background:#010602;overflow:hidden;image-rendering:pixelated}
+.line-map:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;background:repeating-linear-gradient(0deg,transparent 0 13px,#115329 14px 15px),repeating-linear-gradient(90deg,transparent 0 17px,#115329 18px 19px)}
+.line-map svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.map-house{position:absolute;transform:translate(-50%,-50%);z-index:2;min-width:46px;min-height:47px;border:1px solid #4cff81;background:#010602;color:#4cff81;font:700 13px 'Courier New',monospace;cursor:pointer;touch-action:manipulation;padding:3px 5px}
+.map-house:before{content:'⌂';display:block;font-size:25px;line-height:24px}
+.map-house.connected{background:#164524;color:#baffcc;box-shadow:0 0 12px #23934c}
+.map-house.connected:after{content:'✓';position:absolute;top:-9px;right:-8px;background:#010602;color:#baffcc}
+.map-house.source{border-style:double;border-width:3px;cursor:default}
+.map-house.source:before{content:'';display:block;width:20px;height:25px;margin:0 auto 1px;background:#4cff81;clip-path:polygon(54% 0,12% 55%,44% 55%,31% 100%,90% 39%,57% 39%,78% 0);filter:none}
+.map-house:not(.connected):hover,.map-house:not(.connected):focus-visible{background:#164524;outline:2px solid #baffcc}
+.map-house:disabled{opacity:1}
+.map-hint{position:absolute;bottom:5px;left:8px;right:8px;text-align:center;font:12px 'Courier New',monospace;color:#baffcc;background:#010602dd;z-index:3;pointer-events:none}
+.line-map .route-line{stroke:#4cff81;stroke-width:1.1;fill:none;vector-effect:non-scaling-stroke}
+.line-map .route-line.active{stroke:#baffcc;stroke-width:3;filter:drop-shadow(0 0 2px #4cff81)}
+.map-meter{font-size:13px;color:#baffcc;line-height:1.55;margin:5px 0 10px}.map-meter strong{color:#4cff81}.map-house{font-size:13px}.map-house:disabled{cursor:default}
+@media(max-width:760px){.line-map{height:205px}.map-house{min-width:42px;min-height:43px;font-size:12px}.map-house:before{font-size:21px;line-height:21px}.map-hint{font-size:10px}}
+</style></head><body><main class="computer"><div class="brand"><span>▦ ELECTRIC COOPERATIVE</span><span>THE ELECTRIC COOPERATIVE TRAIL · 1937</span></div><div class="bezel"><section class="crt"><div class="title">THE ELECTRIC<br>COOPERATIVE TRAIL</div><canvas class="scene" id="art" width="480" height="150" aria-label="Green monochrome pixel art rural countryside"></canvas><div class="story" id="story" aria-live="polite"></div><div class="bottom"><div><div class="question" id="question">WHAT WILL YOU DO?</div><div class="actions" id="actions"></div><p>&gt; <span class="cursor"></span></p></div><div class="stats" id="stats"></div></div></section></div><div class="chin"><div class="drive"><div class="slot"></div></div><span style="font-size:12px;letter-spacing:2px;color:#645c4f">48K MEMORY · DISK II</span><span class="light" aria-label="Power on"></span></div></main><p class="instructions">CLICK TO SELECT A CHOICE. FINISH BEFORE JAN 1, 1940. <button onclick="gameRestart()">RESTART</button></p><script>
+(()=>{'use strict';const $=id=>document.getElementById(id),cv=$('art'),ctx=cv.getContext('2d'),G='#4cff81',M='#23934c',D='#115329',B='#010602',H='#baffcc';let s,options=[],scene='farm';const random=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;const endings=['Your neighbors are going to be talking about this one for a while.','You have brought shame on your house and community. It may be time to move.','You are so embarrassed you hide in the woods for three days and hope everyone forgets.','Your neighbors start calling you "genius" as a new nickname, but in a mocking way.'];let lastEnding=-1;function embarrassment(){let n;do{n=random(0,endings.length-1)}while(n===lastEnding);lastEnding=n;return endings[n]}
+function reset(){s={date:new Date(1937,0,1,12),members:12,money:60,supplies:55,spirit:70,miles:0,homes:0,phase:1,failures:0,loan:false,cowStreak:0};go('title')}
+function days(n){s.date.setDate(s.date.getDate()+n);return checkDeadline()}
+function checkDeadline(){if(s.date>=new Date(1940,0,1,12)){go('lost');return true}return false}
+function change(m=0,f=0,su=0,sp=0){s.members=Math.max(0,s.members+m);s.money=Math.max(0,s.money+f);s.supplies=Math.max(0,s.supplies+su);s.spirit=Math.max(0,Math.min(100,s.spirit+sp))}
+function option(label,fn,disabled=false){return {label,fn,disabled}}
+function page(message,opts,art='farm',heading='WHAT WILL YOU DO?'){const oldMap=document.getElementById('line-map');if(oldMap)oldMap.remove();document.querySelectorAll('.map-meter').forEach(el=>el.remove());cv.style.display='';scene=art;$('story').textContent=message;$('question').textContent=heading;options=opts;$('actions').replaceChildren();opts.forEach((o,i)=>{let b=document.createElement('button');b.textContent=(i+1)+') '+o.label;b.disabled=!!o.disabled;b.onclick=o.fn;$('actions').append(b)});let st=$('stats');st.replaceChildren();const rows=[['DATE',s.date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}).toUpperCase()],['MEMBERS',s.members],['FUNDS','$'+s.money],['SUPPLIES',s.supplies],['SPIRIT',s.spirit+'%'],['LINES',s.miles+' MI'],['HOMES',s.homes+'/100']];rows.forEach(([a,b])=>{let d=document.createElement('div'),x=document.createElement('span'),y=document.createElement('strong');x.textContent=a+':';y.textContent=b;d.append(x,y);st.append(d)});let hr=document.createElement('hr');st.append(hr);let d=document.createElement('div');d.className='deadline';d.textContent='DEADLINE: JAN 1, 1940';st.append(d);let x=document.createElement('div');x.textContent='CHAPTER '+s.phase+' / 5';st.append(x);draw(art)}
+function askCowForAdvice(){
+  s.cowStreak++;
+  if(s.cowStreak>=30){
+    s.failures++;
+    go('cowEnding');
+    return;
+  }
+  mistake('MOOOO!','The cow recommends more grass. That is not an electrification strategy.','title','cow');
+}
+function mistake(title,body,back,art='farm',penalty){s.failures++;if(penalty)penalty();if(checkDeadline())return;if(days(5))return;page(title+'\n\n'+body+'\n\n'+embarrassment(),[option('LEARN FROM YOUR MISTAKE',()=>go(back)),option('SNEAK AWAY QUIETLY',()=>go(back))],art,'WHOOPS! +5 DAYS')}
+
+// Route-planning puzzle: a player chooses house order. Only built lines are visible.
+// Each newly selected farmhouse joins its closest already-connected node. The order
+// changes total supply cost. 12 supplies is optimal; longer routes cost more.
+function startLineMap(){
+  const nodes=[{id:'P',x:9,y:53},{id:'1',x:29,y:25},{id:'2',x:29,y:76},{id:'3',x:53,y:21},{id:'4',x:58,y:74},{id:'5',x:84,y:45}];
+  const byId=Object.fromEntries(nodes.map(n=>[n.id,n]));
+  const routeCost=(a,b)=>Math.max(1,Math.ceil(Math.hypot(a.x-b.x,a.y-b.y)/16));
+  const connected=new Set(['P']);const segments=[];let spent=0;
+  const optimal=12;
+  page('PLAN YOUR POWER LINES\n\nConnect five farms using as few supplies as possible. Tap houses in the order you want to connect them. Each new house connects to the nearest ALREADY POWERED location.\n\nLonger routes use more wire and poles. Can you complete the map using only 12 supplies?',
+    [option('RETURN TO CONSTRUCTION (NO COST)',()=>go('build'))],'poles','PLAN YOUR ROUTE · 0 / 5');
+  cv.style.display='none';
+  const map=document.createElement('div');map.id='line-map';map.className='line-map';map.setAttribute('role','group');map.setAttribute('aria-label','Power line routing challenge. Tap houses to build efficient connections.');
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');map.append(svg);
+  const meter=document.createElement('div');meter.className='map-meter';
+  const hint=document.createElement('div');hint.className='map-hint';hint.textContent='NO LINES BUILT YET — CHOOSE YOUR FIRST HOUSE';
+  const buttons=new Map();
+  const actionBox=$('actions');
+  function showActions(done=false){
+    actionBox.replaceChildren();options=[];
+    if(done){
+      const extra=spent-optimal,fee=45+Math.max(0,extra)*8;
+      const finish=document.createElement('button');finish.textContent='1) BUILD THIS ROUTE ($'+fee+', '+spent+' SUPPLIES, 48 DAYS)';
+      finish.disabled=s.money<fee||s.supplies<spent;
+      finish.onclick=()=>{if(s.money<fee||s.supplies<spent)return;change(0,-fee,-spent,2);s.miles+=5;if(!days(48))go('build','Five more miles complete!')};
+      actionBox.append(finish);
+      if(finish.disabled){const notice=document.createElement('div');notice.textContent='NOT ENOUGH FUNDS OR SUPPLIES. RESET THE MAP TO TRY A CHEAPER ROUTE.';notice.className='map-meter';actionBox.append(notice)}
+    }
+    const reset=document.createElement('button');reset.textContent=(done?'2':'1')+') RESET ROUTE (NO COST)';reset.onclick=()=>startLineMap();actionBox.append(reset);
+    const back=document.createElement('button');back.textContent=(done?'3':'2')+') RETURN TO CONSTRUCTION (NO COST)';back.onclick=()=>go('build');actionBox.append(back);
+  }
+  function refresh(){
+    $('question').textContent='PLAN YOUR ROUTE · '+(connected.size-1)+' / 5';
+    meter.textContent='SUPPLIES NEEDED: '+spent+'   |   BEST POSSIBLE: '+optimal+'   |   AVAILABLE: '+s.supplies;
+    if(connected.size===6){
+      const extra=spent-optimal;
+      hint.textContent=extra===0?'PERFECT ROUTE! MINIMUM SUPPLIES USED!':extra===1?'GOOD ROUTE! YOU CAN SAVE 1 SUPPLY.':'ROUTE COMPLETE! YOU CAN SAVE '+extra+' SUPPLIES.';
+      $('story').textContent='ROUTE PLANNED!\n\nYou connected all five farmhouses using '+spent+' supplies. The most efficient route uses only '+optimal+'.'+(extra?' Extra poles and wire cost $'+(extra*8)+' more. Reset to try a shorter route, or build this one.':' Excellent planning!')+'\n\nTrained crews will build five miles of line in 48 days.';
+      showActions(true)
+    }else{
+      hint.textContent='TAP AN UNCONNECTED HOUSE — LINES APPEAR AS YOU BUILD';
+      showActions(false)
+    }
+  }
+  for(const n of nodes){
+    const b=document.createElement('button');b.type='button';b.className='map-house'+(n.id==='P'?' source connected':'');b.style.left=n.x+'%';b.style.top=n.y+'%';b.textContent=n.id==='P'?'CO-OP':'';b.title=n.id==='P'?'Cooperative power source':'Connect this farmhouse';
+    b.setAttribute('aria-label',n.id==='P'?'Cooperative power source':'Connect this farmhouse');
+    if(n.id==='P')b.disabled=true;
+    b.onclick=()=>{
+      if(connected.has(n.id))return;
+      const parent=nodes.filter(v=>connected.has(v.id)).sort((a,c)=>routeCost(n,a)-routeCost(n,c)||Math.hypot(n.x-a.x,n.y-a.y)-Math.hypot(n.x-c.x,n.y-c.y))[0];
+      const cost=routeCost(n,parent);spent+=cost;connected.add(n.id);b.classList.add('connected');b.disabled=true;
+      const line=document.createElementNS('http://www.w3.org/2000/svg','line');line.setAttribute('x1',parent.x);line.setAttribute('y1',parent.y);line.setAttribute('x2',n.x);line.setAttribute('y2',n.y);line.classList.add('route-line','active');svg.append(line);segments.push(line);
+      refresh();
+    };
+    buttons.set(n.id,b);map.append(b)
+  }
+  map.append(hint);cv.after(map);cv.after(meter);refresh();
+}
+
+// Recruitment encounters retain the original resource and calendar rules.
+function startVisit(){
+ page('A FARMER ANSWERS THE DOOR.\n\nYou have a chance to explain why neighbors are joining together to bring electricity to rural homes. What do you say?',[
+ option('EXPLAIN THE BENEFITS OF A MEMBER-OWNED ELECTRIC COOPERATIVE',()=>{let n=random(4,8);change(n,n*5,-5,2);if(!days(30))page('THE FARMER SIGNS UP!\n\nYou explain that neighbors can own their electric cooperative together and bring power to farms that other utilities will not serve. The farmer talks to nearby families, too.\n\n'+n+' NEW MEMBERS JOINED.',[option('CONTINUE',()=>go('organize'))],'farmer','GOOD WORK!')}),
+ option('TELL THE FARMER THEY ARE JOINING WHETHER THEY LIKE IT OR NOT',()=>mistake('DOOR SLAMMED!','The farmer slams the door in your face. Cooperative Principle #1 is VOLUNTARY AND OPEN MEMBERSHIP. Nobody can be forced to join.','organize','farmer',()=>change(0,0,0,-5))),
+ option('TELL THE FARMER YOU TALK TO COWS',()=>mistake('MOO-VING RIGHT ALONG','The farmer slowly backs away and closes the door. The cows decline to comment.','organize','farmer')),
+ option('RETURN TO RECRUITING',()=>go('organize'))
+ ],'farmer','VISIT A FARM');
+}
+function startRecruitMeeting(){
+ page('THE SCHOOLHOUSE IS PACKED!\n\nNeighbors have come to hear about the proposed electric cooperative. You have the floor. How will you make your case?',[
+ option('EXPLAIN HOW MEMBERS WILL OWN AND GUIDE THEIR COOPERATIVE',()=>{let n=random(6,11);change(n,n*5-15,0,5);if(!days(40))page('THE MEETING IS A SUCCESS!\n\nNeighbors ask questions, discuss the costs, and choose to sign up. '+n+' FAMILIES JOINED.\n\nEach new member has a voice in the cooperative.',[option('CONTINUE',()=>go('organize'))],'meeting','SUCCESSFUL MEETING')}),
+ option('DECLARE YOURSELF THE PERMANENT KING OF ELECTRICITY',()=>mistake('NO KINGS ALLOWED!','The crowd is not impressed by your imaginary crown. Electric cooperatives are democratically controlled by their members.','organize','meeting',()=>change(0,-5,0,-5))),
+ option('GO HOME WITHOUT EXPLAINING ANYTHING',()=>mistake('AN AWKWARD MEETING','The neighbors sat through your entire meeting and learned absolutely nothing. Next time, tell them how the cooperative works.','organize','meeting')),
+ option('RETURN TO RECRUITING',()=>go('organize'))
+ ],'meeting','COMMUNITY MEETING');
+}
+function startNewspaper(){
+ page('THE COUNTY NEWSPAPER HAS SPACE FOR YOUR AD!\n\nYou want neighbors to understand why an electric cooperative matters. Choose the headline that should appear in the next issue.',[
+ option('NEIGHBORS WORKING TOGETHER TO BRING ELECTRICITY TO OUR FARMS',()=>{let n=random(1,5);change(n,n*5,0,1);if(!days(30))page('HOT OFF THE PRESS!\n\nYour advertisement explains how families can voluntarily join a member-owned electric cooperative. '+n+' NEW MEMBERS SIGNED UP.',[option('CONTINUE',()=>go('organize'))],'newspaper','EXTRA! EXTRA!')}),
+ option('FREE ELECTRICITY FOREVER! NO BILLS! NO QUESTIONS!',()=>mistake('FALSE ADVERTISING!','The editor refuses your ad. Cooperatives still need money to build and maintain electric lines.','organize','newspaper',()=>change(0,-10,0,-4))),
+ option('LOCAL ORGANIZER SAYS COWS ARE SECRETLY IN CHARGE',()=>mistake('UDDER NONSENSE!','The editor prints a correction. The cows request a lawyer.','organize','newspaper')),
+ option('RETURN TO RECRUITING',()=>go('organize'))
+ ],'newspaper','WRITE YOUR AD');
+}
+function go(k,msg=''){
+if(k==='title'){page('AMERICA, 1937.\n\nCities glow with electric lights, but most rural homes remain dark. Power companies say farms are too far apart.\n\nYour neighbors want to build a member-owned electric cooperative. Can you bring electricity to 100 homes BEFORE JANUARY 1940?\n\nEvery day counts!', [option('BEGIN THE ADVENTURE',()=>{s.cowStreak=0;go('organize')}),option('HOW TO PLAY',()=>{s.cowStreak=0;go('help')}),option('ASK THE COW FOR ADVICE',askCowForAdvice)],'farm','CLICK TO SELECT A CHOICE');return}
+if(k==='help'){page('THE MISSION\n\nRecruit members, elect a board, get an REA loan, build 30 miles of line, pass safety inspection, and power 100 homes before January 1, 1940.\n\nEvery action costs time, sometimes months. More members bring $5 each, but endlessly recruiting will make you miss the deadline.\n\nSpend your money and supplies wisely. Funny mistakes can cost precious days.',[option('START YOUR JOURNEY',()=>go('organize'))],'farm','INSTRUCTIONS');return}
+if(k==='organize'){s.phase=1;if(s.members>=35){go('meeting');return}page((msg?msg+'\n\n':'')+'YOU NEED 35 FOUNDING MEMBERS.\n\nCurrently: '+s.members+'. Each family pays $5 to join. You have until January 1940 to finish the entire project.',[
+option('VISIT FARMS (+4–8 MEMBERS, 30 DAYS)',startVisit,s.supplies<5),option('HOLD A MEETING (+6–11, 40 DAYS)',startRecruitMeeting,s.money<15),option('SPREAD THE WORD (+1–5, 30 DAYS)',startNewspaper),option('PROMISE FREE ELECTRICITY',()=>mistake('FREE POWER FOR EVERYONE?','People love the promise, but building and maintaining an electric system costs money. The board is not impressed.','organize','meeting',()=>{change(0,-10,0,-8);days(5)})),option('CHECK THE WEATHER (10 DAYS)',()=>event('organize'))],'farm');return}
+if(k==='meeting'){s.phase=2;page('FOUNDING MEETING!\n\n'+s.members+' families have joined. Your neighbors gather at the schoolhouse. Who should lead a cooperative owned by its members?', [option('ELECT A BOARD (35 DAYS)',()=>{change(0,0,0,10);if(!days(35))go('loan')}),option('DECLARE YOURSELF KING OF ELECTRICITY',()=>mistake('ALL HAIL THE KING!','You receive a cardboard crown. Members immediately vote to remove it. Cooperatives are democratically controlled.','meeting','meeting',()=>{change(0,0,0,-5);days(4)})),option('LET ONE FARMER OWN EVERYTHING',()=>mistake('THAT IS NOT A COOPERATIVE!','A cooperative is owned by its members, not one wealthy farmer.','meeting','meeting',()=>days(3)))],'meeting');return}
+if(k==='loan'){s.phase=3;page('THE REA LOAN\n\nThe Rural Electrification Administration can provide financing, but your cooperative needs a practical construction and repayment plan.',[option('SURVEY A PRACTICAL ROUTE ($35, 60 DAYS)',()=>{change(0,-35,0,5);if(!days(60))go('route')},s.money<35),option('SUBMIT A NAPKIN DRAWING',()=>mistake('NAPKIN REJECTED!','The drawing contains a house, a squiggle, and what might be a potato. The REA requests actual plans.','loan','survey',()=>days(10))),option('ASK FOR FREE MONEY',()=>mistake('NICE TRY!','REA financing is a loan, not a gift. It must be repaid.','loan','survey',()=>days(5))),option('RECRUIT MORE MEMBERS (30 DAYS)',()=>{let n=random(6,12);change(n,n*5,0,3);if(!days(30))go('loan')})],'survey');return}
+if(k==='route'){page('THE ENGINEER HAS TWO PLANS.\n\nA practical first section reaches a cluster of farms. The other proposal goes everywhere at once and costs far too much.',[option('SUBMIT PLANS FOR REA REVIEW (90 DAYS)',()=>{if(!days(90))go('approved')}),option('BUILD EVERYWHERE IMMEDIATELY',()=>mistake('THE SPAGHETTI ROUTE','Your map looks like spilled spaghetti. The loan committee demands a more practical plan.','route','survey',()=>days(14))),option('CONNECT ONLY YOUR OWN HOUSE',()=>mistake('ONE EXPENSIVE LIGHT BULB','The rest of your members would like electricity, too.','route','farm',()=>days(7)))],'survey');return}
+if(k==='approved'){s.loan=true;s.money+=520;s.supplies+=25;page('LOAN APPROVED!\n\nYour cooperative receives construction financing. You now have money for poles, wire, transformers, and equipment.\n\nThe loan must be repaid. And the deadline is still approaching!',[option('BEGIN CONSTRUCTION',()=>go('build'))],'truck','GOOD NEWS!');return}
+if(k==='build'){s.phase=4;if(s.miles>=30){go('inspect');return}page((msg?msg+'\n\n':'')+'CONSTRUCTION REPORT\n\nCompleted: '+s.miles+' / 30 MILES.\n\nTrained crews are setting poles and installing lines. Keep an eye on funds, supplies, and the calendar.',[option('BUILD 5 MILES — CONNECT HOUSES ($45, 12 SUPPLIES, 48 DAYS)',()=>startLineMap(),s.money<45||s.supplies<12),option('BUY 25 SUPPLIES ($45, 20 DAYS)',()=>{change(0,-45,25);if(!days(20))go('build','New equipment arrives.')},s.money<45),option('RECRUIT MEMBERS (30 DAYS)',()=>{let n=random(6,12);change(n,n*5,0,2);if(!days(30))go('build',n+' new families join.')}),option('USE SPAGHETTI INSTEAD OF WIRE',()=>mistake('PASTA POWER FAILURE','The noodles snap, the sauce spills, and the crew has lunch. Spaghetti makes terrible power lines.','build','truck',()=>{change(0,-10,0,-3);days(6)})),option('CHECK TRAIL CONDITIONS (10 DAYS)',()=>event('build'))],'truck');return}
+if(k==='inspect'){s.phase=5;page('THE FIRST 30 MILES ARE COMPLETE!\n\nBefore electricity can flow, qualified workers must inspect the system and prepare it for safe energization.',[option('ARRANGE INSPECTION ($25, 30 DAYS)',()=>{change(0,-25,0,5);if(!days(30))go('light')},s.money<25),option('SKIP THE INSPECTION',()=>mistake('SAFETY FIRST!','Only qualified workers should inspect and energize electrical lines. No shortcuts.','inspect','poles',()=>days(4))),option('RAISE MONEY (30 DAYS)',()=>{change(0,35,0,3);if(!days(30))go('inspect')})],'poles');return}
+if(k==='light'){s.homes=Math.min(45,s.members);page('LET THERE BE LIGHT!\n\nThe first lines are safely energized! Windows glow across the countryside. '+s.homes+' homes now have electricity.\n\nBut the deadline is approaching. Can you reach 100 homes?',[option('EXPAND THE COOPERATIVE',()=>go('expand')),option('THROW A HUGE PARTY ($20, 15 DAYS)',()=>{change(0,-20,0,10);if(!days(15))go('expand','The party was wonderful. Someone brought three pies.')})],'light','A HISTORIC MOMENT');return}
+if(k==='expand'){if(s.homes>=100){go('win');return}page((msg?msg+'\n\n':'')+'HOMES WITH POWER: '+s.homes+' / 100\nMEMBERS WAITING: '+Math.max(0,s.members-s.homes)+'\n\nYou need enough members, money, supplies, AND TIME to finish.',[option('RECRUIT 8–15 MEMBERS (20 DAYS)',()=>{let n=random(8,15);change(n,n*5,0,3);if(!days(20))go('expand',n+' more families joined.')}),option('CONNECT UP TO 15 HOMES ($55, 15 SUPPLIES, 32 DAYS)',()=>{let n=Math.min(15,s.members-s.homes,100-s.homes);change(0,-55,-15,2);s.homes+=n;if(!days(32))go(s.homes>=100?'win':'expand',n+' homes energized!')},s.members<=s.homes||s.money<55||s.supplies<15),option('BUY 25 SUPPLIES ($45, 20 DAYS)',()=>{change(0,-45,25);if(!days(20))go('expand','Supplies delivered.')},s.money<45),option('COMMUNITY FUNDRAISER (+$30–60, 20 DAYS)',()=>{let n=random(30,60);change(0,n,0,5);if(!days(20))go('expand','The community raised $'+n+'!')}),option('CONNECT A COW FIRST',()=>mistake('BESSIE IS UNIMPRESSED','Bessie has no use for an electrical outlet. Her farmer, however, would appreciate lights in the barn.','expand','cow',()=>days(3))),option('CHECK CONDITIONS (10 DAYS)',()=>event('expand'))],'poles');return}
+if(k==='win'){page('EXTRA! EXTRA!\n\n100 HOMES NOW HAVE ELECTRICITY!\n\nYour community built a member-owned cooperative before January 1940. You overcame challenges, made a few questionable decisions, and brought power to rural families.\n\nPOWER TO THE PEOPLE!',[option('READ YOUR FINAL REPORT',()=>go('report')),option('PLAY AGAIN',reset)],'light','YOU WIN!');return}
+if(k==='report'){page('THE COUNTY CHRONICLE\n\nHOMES ENERGIZED: '+s.homes+'\nMEMBERS: '+s.members+'\nLINE BUILT: '+s.miles+' MILES\nFINISHED: '+s.date.toLocaleDateString()+'\nSILLY MISTAKES: '+s.failures+'\n\nREAL HISTORY: Farmers and neighbors organized electric cooperatives to bring power to rural America. Their work changed communities for generations.',[option('PLAY AGAIN',reset)],'light','MISSION ACCOMPLISHED');return}
+if(k==='cowEnding'){
+  page('GAME OVER!\n\nThe people in the area find it odd that you keep talking to the cows. After asking for cow advice 30 times in a row, you have been taken away to the nearest asylum.\n\nWhile this is unfortunate, the game creator, Patrick Wood, applauds your continued desire to gain advice from cows!\n\nMOOOOOOOO!\n\nSECRET ENDING UNLOCKED.',[option('PLAY AGAIN',reset)],'cow','THE COWS HAVE SPOKEN');
+  return;
+}
+if(k==='lost'){page('YOU HAVE RUN OUT OF TIME!\n\nJANUARY 1, 1940 HAS ARRIVED.\n\nYour cooperative reached '+s.homes+' of 100 homes. You recruited '+s.members+' members and built '+s.miles+' miles of line.\n\nThe community still believes in electricity, but this round of the game is over. Next time, balance recruiting, spending, and building to beat the deadline.\n\nGAME OVER.',[option('TRY AGAIN',reset)],'storm','THE CLOCK HAS RUN OUT')}
+}
+function event(back){let events=[['MUDDY ROADS! Your truck gets stuck. Lose 8 supplies.',()=>change(0,0,-8,-3),'truck'],['A FARMER DONATES EQUIPMENT! Gain 8 supplies.',()=>change(0,0,8,4),'farm'],['THREE NEW FAMILIES JOIN! Your neighbors spread the word.',()=>change(3,15,0,5),'meeting'],['THE COUNTY FAIR! A booth raises $25.',()=>change(0,25,0,5),'meeting'],['A SQUIRREL STEALS YOUR LUNCH! Nobody gets hurt, but the crew is hungry.',()=>change(0,0,0,1),'cow'],['STORM DELAY! Crews wait for safe conditions.',()=>change(0,0,0,-2),'storm']];let e=events[random(0,events.length-1)];e[1]();if(days(10))return;page(e[0],[option('CONTINUE',()=>go(back))],e[2],'TRAIL EVENT')}
+function px(x,y,w=1,h=1,col=G){ctx.fillStyle=col;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}function line(x,y,X,Y,col=G){ctx.strokeStyle=col;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x+.5,y+.5);ctx.lineTo(X+.5,Y+.5);ctx.stroke()}
+function draw(kind){ctx.fillStyle=B;ctx.fillRect(0,0,480,150);for(let x=0;x<480;x+=2){let y=63+Math.round(9*Math.sin(x/31)+4*Math.cos(x/13));px(x,y,2,2,D);for(let yy=y+5;yy<106;yy+=6)if((x+yy)%9<4)px(x,yy,2,1,D)}for(let x=0;x<480;x+=3){let y=43+Math.round(4*Math.sin(x/20));if(x%5)px(x,y,2,1,M)}for(let y=0;y<28;y+=3){let d=y-14,w=Math.sqrt(Math.max(0,196-d*d))*2;px(304-w/2,17+y,w,2,kind==='storm'?D:G)}function tree(x,y,scale=1){px(x,y,4*scale,46*scale,G);for(let i=0;i<36;i++){let xx=x-19*scale+(i*17%42)*scale,yy=y-25*scale+(i*11%31)*scale;px(xx,yy,5*scale,3*scale,i%5===0?D:G)}}tree(34,64);tree(160,76,.55);for(let y=103;y<150;y+=4)for(let x=y%7;x<480;x+=6)if((x*7+y)%13<8)px(x,y,2,2,(x+y)%4?M:D);for(let y=94;y<150;y++){let center=229+Math.round(22*Math.sin((y-94)/13)),half=2+(y-94)*.58;px(center-half,y,half*2,1,B);if(y%4<2){px(center-half,y,3,1,G);px(center+half-3,y,3,1,G)}}px(76,91,59,34,G);px(80,95,51,26,B);for(let i=0;i<11;i++)px(71+i*7,90-Math.min(i,10-i)*3,8,3,G);px(86,103,12,12,G);px(89,106,6,6,kind==='light'?G:B);px(110,102,12,23,G);px(113,105,6,20,B);px(68,123,72,2,G);px(124,77,4,14,G);px(120,76,11,3,G);for(let x=144;x<202;x+=12)px(x,112,2,15,G);px(143,117,62,2,G);px(143,124,62,2,G);if(['poles','truck','survey','light','storm'].includes(kind)){let xs=[355,403,456];for(let x of xs){px(x,57,4,75,G);px(x-13,68,30,3,G);px(x-10,65,3,5,G);px(x+12,65,3,5,G)}for(let i=0;i<2;i++){let a=xs[i],b=xs[i+1];for(let x=a;x<b;x++){let t=(x-a)/(b-a);px(x,69+Math.round(9*Math.sin(t*Math.PI)),1,1,G)}}}if(['truck','survey','storm'].includes(kind)){px(300,106,58,28,G);px(304,110,50,20,B);for(let x=307;x<354;x+=5)px(x,114,3,1,M);px(358,115,29,19,G);px(363,104,17,12,G);px(366,107,11,7,B);for(let x of [315,375]){px(x-10,129,20,20,G);px(x-6,133,12,12,B);px(x-2,137,4,4,G)}px(306,102,44,3,G);px(319,98,23,3,G)}if(kind==='meeting'){px(226,79,70,47,G);px(230,83,62,39,B);for(let i=0;i<13;i++)px(221+i*7,79-Math.min(i,12-i)*3,8,3,G);px(252,104,15,22,G);px(257,107,5,19,B);for(let x of [235,275]){px(x,94,10,11,G);px(x+2,96,6,7,B)}}if(kind==='cow'){px(292,111,53,25,G);px(298,115,42,16,B);px(343,112,22,19,G);px(348,116,14,12,B);for(let x of [301,333])px(x,134,5,16,G);px(348,104,4,9,G);px(360,104,4,9,G);px(352,120,3,3,G);px(292,116,12,7,G);px(315,120,12,9,G)}if(kind==='light'){for(let x of [86,110]){px(x-4,99,20,21,D);px(x,103,12,12,H)}for(let i=0;i<20;i++){let x=i*37%480,y=i*19%68;px(x,y,1,1,G)}}if(kind==='storm'){for(let i=0;i<65;i++){let x=i*43%480,y=i*29%150;line(x,y,x-3,y+7,D)}}
+// Dedicated monochrome Apple-era pixel scenes for the three recruitment encounters.
+if(kind==='farmer'){
+ ctx.fillStyle=B;ctx.fillRect(0,0,480,150);
+ for(let y=100;y<150;y+=6)for(let x=(y%12);x<480;x+=13)px(x,y,3,2,D);
+ // farmhouse porch, window and door
+ px(268,37,155,95,G);px(274,43,143,89,B);
+ for(let i=0;i<22;i++)px(254+i*8,39-Math.min(i,21-i)*2,10,4,G);
+ px(299,67,34,30,G);px(304,72,24,20,B);px(315,72,3,20,G);
+ px(353,66,40,66,G);px(359,72,28,60,B);px(380,102,4,4,G);
+ // farmer in overalls with hat
+ px(364,56,28,5,G);px(369,48,18,9,G);px(373,61,12,13,G);px(372,76,15,26,M);px(369,77,4,24,G);px(384,77,4,24,G);px(370,102,7,25,G);px(381,102,7,25,G);
+ // visitor with cap, head, torso, legs, raised talking arm
+ px(128,69,31,4,G);px(136,61,17,9,G);px(139,75,12,14,G);px(131,89,27,29,G);px(136,118,7,24,G);px(149,118,7,24,G);
+ px(157,93,25,4,G);px(178,88,4,10,G);
+ // speech marks between the neighbors
+ for(let i=0;i<3;i++)px(201+i*15,61-(i%2)*5,7,4,G);
+}
+if(kind==='meeting'){
+ // interior meeting scene with people at desks, a cooperative sign and presenter
+ ctx.fillStyle=B;ctx.fillRect(0,0,480,150);
+ px(80,17,322,111,D);px(85,22,312,101,B);px(172,28,136,29,G);px(177,33,126,19,B);
+ ctx.fillStyle=G;ctx.font='bold 11px monospace';ctx.textAlign='center';ctx.fillText('CO-OP MEETING',240,46);ctx.textAlign='start';
+ px(234,67,14,16,G);px(230,84,22,28,G);px(234,111,6,18,G);px(246,111,6,18,G);
+ for(let x of [112,172,308,366]){px(x,99,16,16,G);px(x-4,115,25,17,M);px(x-8,130,35,5,G)}
+ px(75,140,332,3,G);
+}
+if(kind==='newspaper'){
+ ctx.fillStyle=B;ctx.fillRect(0,0,480,150);
+ px(115,10,252,134,G);px(120,15,242,124,B);px(126,21,230,4,G);
+ ctx.fillStyle=G;ctx.textAlign='center';ctx.font='bold 20px monospace';ctx.fillText('COUNTY NEWS',241,47);ctx.font='bold 10px monospace';ctx.fillText('RURAL ELECTRICITY EDITION',241,62);ctx.textAlign='start';
+ px(129,69,223,2,G);px(132,77,99,47,D);px(136,81,91,39,B);px(143,96,25,25,G);px(170,85,5,36,G);px(175,93,34,3,G);
+ for(let y=78;y<127;y+=7){px(242,y,105-(y%3)*6,2,G)}
+ for(let y=129;y<137;y+=5)px(130,y,218,2,M);
+}
+}
+window.gameRestart=reset;document.addEventListener('keydown',e=>{if(e.key>='1'&&e.key<='9'&&!e.altKey&&!e.ctrlKey&&!e.metaKey){let o=options[Number(e.key)-1];if(o&&!o.disabled){e.preventDefault();o.fn()}}});reset();})();
+</script><script>if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Offline caching unavailable',err));});}</script></body></html>
